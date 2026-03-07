@@ -22,7 +22,7 @@ async function main() {
   }
 
   //Create and initialize a DB
-  let db = createDb();
+  let db = await createDb();
   await initSchema(db);
   //Set the eventLoop to true by default
   let eventLoop = true;
