@@ -97,7 +97,7 @@ test.describe("event service unit testing", () => {
 test.describe("event service integration testing", () => {
   //Create a DB before each test
   test.beforeEach(async () => {
-    db = createDb();
+    db = await createDb();
     await initSchema(db);
   });
   //close and remove db after each test
@@ -137,11 +137,10 @@ test.describe("event service integration testing", () => {
       date: "2008-08-30",
     });
     await assert.rejects(
-      () =>
-        addEvent(db, {
-          eventName: "Anniversary",
-          date: "2008-08-30",
-        }),
+      addEvent(db, {
+        eventName: "Anniversary",
+        date: "2008-08-30",
+      }),
       {
         message: /UNIQUE constraint failed/i,
       },
@@ -160,13 +159,12 @@ test.describe("event service integration testing", () => {
       checkedIn: true,
     });
     await assert.rejects(
-      () =>
-        addAttendee(db, {
-          name: "Joe",
-          email: "bob@gmail.com",
-          eventId: newEvent.eventId,
-          checkedIn: true,
-        }),
+      addAttendee(db, {
+        name: "Joe",
+        email: "bob@gmail.com",
+        eventId: newEvent.eventId,
+        checkedIn: true,
+      }),
       {
         message: /UNIQUE constraint failed/i,
       },

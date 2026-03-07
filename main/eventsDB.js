@@ -8,8 +8,13 @@ const sqlite3 = require("sqlite3");
 //and AI told me to add "type: commonjs" into the package-lock.json file, which I did.
 //But it wont allow me to add comments to that file which is why I am mentioning it here
 
-const createDb = () => {
-  return new sqlite3.Database("../data/events.db");
+const createDb = (filename = "../data/events.db") => {
+  return new Promise((resolve, reject) => {
+    const db = new sqlite3.Database(filename, (err) => {
+      if (err) return reject(err);
+      resolve(db);
+    });
+  });
 };
 
 const run = (db, sql, params = []) => {
