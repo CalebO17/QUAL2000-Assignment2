@@ -1,4 +1,6 @@
 const sqlite3 = require("sqlite3");
+const fs = require("fs");
+const path = require("path");
 
 //AI was used a bit for this file primarily because this file was written
 //primarily using reference material from another lab we were given but
