@@ -8,7 +8,13 @@ const sqlite3 = require("sqlite3");
 //and AI told me to add "type: commonjs" into the package-lock.json file, which I did.
 //But it wont allow me to add comments to that file which is why I am mentioning it here
 
-const createDb = (filename = "../data/events.db") => {
+// Make sure the data directory exists
+const dataDir = path.resolve(__dirname, "../data");
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true }); //create the folder if it doesn't exist
+}
+
+const createDb = (filename = path.join(dataDir, "events.db")) => {
   return new Promise((resolve, reject) => {
     const db = new sqlite3.Database(filename, (err) => {
       if (err) return reject(err);
