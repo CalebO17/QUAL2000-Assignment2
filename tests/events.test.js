@@ -20,9 +20,15 @@ const fs = require("fs");
 const path = require("path");
 
 //path to db file
-//path variable - AI assistance
-const dbPath = path.resolve(__dirname, "../data/events.db");
+//I ran into issues when testing github actions workflow, and I used
+//copilot which helped me come up with the code below that will help prevent
+//the "SQLITE_CANTOPEN" error that i was getting by
+const dataDir = path.resolve(__dirname, "../data");
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true });
+}
 
+const dbPath = path.resolve(dataDir, "events.db");
 //Global db variable
 let db;
 
