@@ -19,15 +19,20 @@ const {
 const fs = require("fs");
 const path = require("path");
 
-//path to db file
 //I ran into issues when testing github actions workflow, and I used
-//copilot which helped me come up with the code below that will help prevent
-//the "SQLITE_CANTOPEN" error that i was getting by
+//copilot which helped me come up with the variable below that will help prevent
+//the errors I was getting, which were primarily that github
+//was having trouble finding where to put the DB file
+//so it helped me make a variable that checks if it can find the
+//folder and if it cant, it creates the folder for the
+//DB (using mkdirSync) instead of crashing, and it is also
+//recursive so itll make any missing parent folders as well
 const dataDir = path.resolve(__dirname, "../data");
 if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir, { recursive: true });
 }
 
+//Variable representing the path to the DB folder (connecting with the previous dataDir)
 const dbPath = path.resolve(dataDir, "events.db");
 //Global db variable
 let db;
