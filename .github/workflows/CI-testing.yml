@@ -32,4 +32,4 @@ jobs:
 
       #step-4: Run the unit and integration tests
       - name: Run Tests
-        run: npm test
+        run: node --test
