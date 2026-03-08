@@ -5,8 +5,8 @@ const path = require("path");
 //AI was used a small amount for this file  because this file was written
 //primarily using reference material from another lab we were given but
 //I used AI to help me understand and have things explained to me so instead
-//of mindlessly copying code from another lab I was writing things and understanding
-//why I was writing them a bit more. I also ran into a bug where my tests wouldnt run
+//of mindlessly copying code from another lab, I was writing things and understanding
+//them. I also ran into a bug where my tests wouldnt run
 //and AI told me to add "type: commonjs" into the package-lock.json file, which I did.
 //But it wont allow me to add comments to that file which is why I am mentioning it here
 
