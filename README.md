@@ -29,7 +29,7 @@ To install the Event Registration System, you must first clone the repository to
 
 Open the cloned repository inside of Visual Studio Code and run npm install (inside the terminal)
 
-![A screenshot taken inside of the terminal showcasing the npm install command being successfully run]()
+![A screenshot taken inside of the terminal showcasing the npm install command being successfully run]((https://github.com/user-attachments/assets/47fa20a4-4bde-4847-b86f-27be7c484179))
 
 ## Running the program
 
@@ -39,7 +39,7 @@ Once in the main folder, enter 'node eventSystem.js' into the terminal to run th
 
 You will then be prompted to enter information about events and attendees, which will then be entered into a database and output to the console.
 
-![Image showcasing the user input being requested inside of the terminal]()
+![Image showcasing the user input being requested inside of the terminal](https://github.com/user-attachments/assets/3a4f7453-590d-4585-97a7-765ffd7201e5)
 
 (NOTE: If running this program multiple times, please ensure that you delete the database file from the 'data' folder);
 
@@ -49,7 +49,7 @@ To run the tests, you must ensure you are in the tests folder. You can do this b
 
 Once inside of the tests folder, simply enter 'node --test' into the console and the tests will run
 
-![Image showcasing the tests running successfully in the console]()
+![Image showcasing the tests running successfully in the console](https://github.com/user-attachments/assets/b07973be-a5bc-4c6b-9ddd-17b2c26e7791)
 
 ## Future Improvements
 
